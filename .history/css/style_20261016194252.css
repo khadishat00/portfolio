@@ -1,0 +1,87 @@
+
+:root {
+  --ink: #100d0d;
+  --wine: #4a0004;
+  --red: #850d1b;
+  --gold: #b4864d;
+  --champagne: #e8d5b7;
+  --beige: #d9b99a;
+  --paper: #f3eadc;
+  --muted: #9e8e82;
+
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--ink);
+  background-image: url("/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+html {
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  
+}
+
+h1 {
+  color: var(--paper);
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+{
+  color: var(--paper);
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+/* Aparte achtergrondkleur voor elke section */
+.wie-ben-ik {
+  background-color: var(--champagne);
+}
+
+.geschiedenis {
+  background-color: var(--beige);
+}
+
+.Motivatie {
+  background-color: var(--red);
+}
+
+.ambities {
+  background-color: var(--wine);
+}
+
+/* Algemene opmaak van de sections */
+main section {
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 12px;
+}
+
+/* Tekstkleuren voor donkere sections */
+.Motivatie h2,
+.ambities h2 {
+  color: var(--paper);
+}
+
+.Motivatie p,
+.ambities p {
+  color: var(--paper);
+}
+
+figure {
+  display: block;
+  margin: 1em 40px;
+}
+
+img {
+  max-width: 100%;
+  border: 2px groove var(--gold);
+  border-radius: 50%;
+}

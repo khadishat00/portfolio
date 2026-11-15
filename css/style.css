@@ -1,0 +1,626 @@
+/* ---------- Variabelen ---------- */
+:root {
+  --ink: #100d0d;
+  --wine: #4a0004;
+  --red: #850d1b;
+  --gold: #b4864d;
+  --champagne: #e8d5b7;
+  --beige: #d9b99a;
+  --paper: #f3eadc;
+  --muted: #9e8e82;
+
+  --font-titel: "Bodoni Moda", "Didot", "Times New Roman", serif;
+  --font-tekst: "Jost", "Segoe UI", system-ui, sans-serif;
+
+  --breedte: 70rem;
+  --rand: clamp(1.25rem, 5vw, 5rem);
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---------- Basis ---------- */
+body {
+  font-family: var(--font-tekst);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background-color: var(--paper);
+}
+
+a {
+  color: var(--red);
+}
+
+a:hover {
+  color: var(--wine);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+h1,
+h2 {
+  font-family: var(--font-titel);
+  font-weight: 500;
+}
+
+/* gecentreerde kolom met de maximale breedte van de site */
+.inhoud {
+  max-width: var(--breedte);
+  margin-inline: auto;
+  padding: 5.5rem var(--rand) 6rem;
+}
+
+/* titel van een sectie op paper */
+.sectietitel {
+  padding-top: 0.875rem;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  color: var(--red);
+  border-top: 3px solid var(--gold);
+}
+
+.tekstlink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-weight: 600;
+}
+
+/* ---------- Navigatie ---------- */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 2rem;
+  padding: 0 var(--rand);
+  background-color: var(--ink);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.875rem 0;
+  font-family: var(--font-titel);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: var(--champagne);
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2.25rem;
+}
+
+nav li a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.875rem 0;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--champagne);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+nav li a:hover,
+nav li a[aria-current="page"] {
+  color: var(--gold);
+}
+
+nav li a[aria-current="page"] {
+  border-bottom-color: var(--gold);
+}
+
+/* ---------- Knoppen ---------- */
+.knop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0 1.75rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  background-color: var(--gold);
+  border: 1.5px solid var(--gold);
+  cursor: pointer;
+}
+
+.knop:hover {
+  color: var(--ink);
+  background-color: var(--champagne);
+  border-color: var(--champagne);
+}
+
+.knop-lijn {
+  color: var(--champagne);
+  background-color: transparent;
+  border-color: var(--champagne);
+}
+
+.knop-rood {
+  color: var(--champagne);
+  background-color: var(--red);
+  border-color: var(--red);
+}
+
+.knop-rood:hover {
+  color: var(--champagne);
+  background-color: var(--wine);
+  border-color: var(--wine);
+}
+
+/* ---------- Home: hero ---------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem var(--rand) 5rem;
+  text-align: center;
+  background-color: var(--wine);
+  border-bottom: 4px solid var(--gold);
+}
+
+.hero h1 {
+  font-size: clamp(3.25rem, 9.5vw, 8.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--gold);
+}
+
+/* ovale foto in gouden lijst */
+.hero figure {
+  width: clamp(13rem, 22vw, 18.75rem);
+  aspect-ratio: 3 / 4;
+  margin-top: 4rem;
+  overflow: hidden;
+  background-color: var(--ink);
+  border: 6px solid var(--gold);
+  border-radius: 50%;
+  outline: 1px solid var(--gold);
+  outline-offset: 8px;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero p {
+  margin-top: 2.75rem;
+  font-size: 1.375rem;
+  letter-spacing: 0.04em;
+  color: var(--champagne);
+}
+
+.knoppen {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+/* ---------- Titelband van de andere pagina's ---------- */
+.paginakop {
+  padding: 4.5rem var(--rand) 4rem;
+  color: var(--champagne);
+  background-color: var(--wine);
+  border-bottom: 4px solid var(--gold);
+}
+
+.paginakop-inhoud {
+  max-width: var(--breedte);
+  margin-inline: auto;
+}
+
+.paginakop h1 {
+  font-size: clamp(3.25rem, 9vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--gold);
+}
+
+.paginakop p {
+  max-width: 35rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}
+
+/* cv: titel links, profieltekst rechts */
+.paginakop-cv .paginakop-inhoud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 2rem 4rem;
+}
+
+.paginakop-cv h1 {
+  flex: 1 1 15rem;
+}
+
+.profiel {
+  flex: 2 1 30rem;
+  min-width: 0;
+}
+
+.profiel p {
+  max-width: none;
+  margin-top: 0;
+  line-height: 1.6;
+}
+
+.profiel .knop {
+  margin-top: 1.75rem;
+}
+
+/* ---------- Secties op paper: titel links, tekst rechts ---------- */
+.kolommen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 4rem;
+  max-width: var(--breedte);
+  margin-inline: auto;
+  padding: 0 var(--rand) 5.5rem;
+}
+
+.kolommen:first-child {
+  padding-top: 5.5rem;
+}
+
+.kolommen .sectietitel {
+  flex: 1 1 15rem;
+  align-self: flex-start;
+}
+
+.tekst {
+  flex: 2 1 30rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.125rem;
+}
+
+/* openingsalinea */
+.intro {
+  font-size: 1.375rem;
+  line-height: 1.5;
+  color: var(--wine);
+}
+
+.beeld {
+  width: 100%;
+  margin-top: 0.875rem;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background-color: var(--beige);
+  border: 1px solid var(--gold);
+}
+
+.beeld img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Donkere band ---------- */
+.donker {
+  color: var(--champagne);
+  background-color: var(--ink);
+}
+
+.donker-inhoud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem 4rem;
+  max-width: var(--breedte);
+  margin-inline: auto;
+  padding: 5rem var(--rand);
+}
+
+.donker h2 {
+  margin-bottom: 1.125rem;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  color: var(--gold);
+}
+
+/* over mij: motivatie en ambities naast elkaar */
+.donker-inhoud > section {
+  flex: 1 1 21rem;
+  min-width: 0;
+}
+
+/* home: drie ingangen naar de andere pagina's */
+.ingang {
+  flex: 1 1 16rem;
+  min-width: 0;
+  padding-top: 1.125rem;
+  color: var(--champagne);
+  text-decoration: none;
+  border-top: 1px solid var(--gold);
+}
+
+.ingang h2 {
+  margin-bottom: 0.625rem;
+  font-size: 2.125rem;
+}
+
+.ingang:hover {
+  color: var(--champagne);
+  border-top-color: var(--champagne);
+}
+
+.ingang:hover h2 {
+  color: var(--champagne);
+}
+
+/* ---------- Projecten ---------- */
+.projecten {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(21rem, 100%), 1fr));
+  gap: 3.5rem 3rem;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.875rem;
+}
+
+.project figure {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--beige);
+  border: 1px solid var(--gold);
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project h2 {
+  margin-top: 0.375rem;
+  font-size: 1.875rem;
+  line-height: 1.15;
+  color: var(--red);
+}
+
+/* ---------- Cv ---------- */
+.vaardigheden {
+  display: block;
+}
+
+.vaardigheden h2 {
+  margin-bottom: 1.75rem;
+}
+
+.groepen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.25rem 2.5rem;
+}
+
+.groepen section {
+  flex: 1 1 12.5rem;
+  min-width: 0;
+}
+
+.groepen h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chips li {
+  padding: 0.125rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--gold);
+}
+
+.cv-sectie {
+  max-width: var(--breedte);
+  margin-inline: auto;
+  padding: 5.5rem var(--rand) 0;
+}
+
+.cv-sectie:last-child {
+  padding-bottom: 6.5rem;
+}
+
+.cv-sectie .sectietitel {
+  margin-bottom: 1.75rem;
+}
+
+.items {
+  display: grid;
+  gap: 2.5rem 3rem;
+}
+
+.items-drie {
+  grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
+}
+
+.items-twee {
+  grid-template-columns: repeat(auto-fill, minmax(min(25rem, 100%), 1fr));
+  column-gap: 4rem;
+}
+
+.item {
+  padding-top: 1.125rem;
+  border-top: 1px solid var(--beige);
+}
+
+.item .periode {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--wine);
+}
+
+.item h3 {
+  margin-top: 0.25rem;
+  font-size: 1.3125rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.item .plaats {
+  color: var(--wine);
+}
+
+.item ul {
+  margin-top: 0.625rem;
+  padding-left: 1.25rem;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  list-style: disc;
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 3.5rem 4rem;
+}
+
+.contact .sectietitel {
+  margin-bottom: 1.25rem;
+}
+
+.gegevens {
+  flex: 1 1 20rem;
+  min-width: 0;
+}
+
+.gegevens dl > div {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--beige);
+}
+
+.gegevens dt {
+  font-weight: 600;
+  color: var(--wine);
+}
+
+.gegevens dd {
+  overflow-wrap: anywhere;
+}
+
+.bericht {
+  flex: 2 1 30rem;
+  min-width: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.veld {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: 100%;
+}
+
+.velden-rij {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.velden-rij .veld {
+  flex: 1 1 13.75rem;
+  width: auto;
+  min-width: 0;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.625rem 0.875rem;
+  font: inherit;
+  color: var(--ink);
+  background-color: var(--paper);
+  border: 1.5px solid var(--wine);
+  border-radius: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 2rem var(--rand);
+  font-size: 1rem;
+  color: var(--champagne);
+  background-color: var(--wine);
+  border-top: 4px solid var(--gold);
+}

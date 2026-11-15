@@ -1,0 +1,56 @@
+:root {
+  --ink: #100d0d;
+  --wine: #4a0004;
+  --red: #850d1b;
+  --gold: #b4864d;
+  --champagne: #e8d5b7;
+  --beige: #d9b99a;
+  --paper: #f3eadc;
+  --muted: #9e8e82;
+  font-family: "DM Sans", sans-serif;
+  background: var(--ink);
+  background-image: url("/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+html {
+  font-family: "DM Sans", sans-serif;
+}
+body {
+  margin: 25px;
+}
+h1 {
+  color: var(--paper);
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+}
+h2 {
+  color: var(--paper);
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+}
+p {
+  color: black;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: normal;
+}
+
+figure {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 40px;
+  margin-inline-end: 40px;
+  unicode-bidi: isolate;
+}
+
+img {
+  max-width: 100%;
+  border: 2px groove;
+  border-radius: 50%;
+  border-color: rgb(199, 44, 199);
+}
